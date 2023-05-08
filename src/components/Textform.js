@@ -29,7 +29,7 @@ let newtext=text.split(/[ ]+/);
 changetextarea(newtext.join(" "))
 
     }
-  const [text, changetextarea] = useState("enter text here");
+  const [text, changetextarea] = useState("");
   return (
     <>
       <div className="mb-3">
@@ -40,7 +40,7 @@ changetextarea(newtext.join(" "))
           onChange={handleonchange}
           cols="150"
           rows="14"
-          className="tectt"
+          
         ></textarea>
       </div>
       <div className="col-auto">
@@ -48,6 +48,7 @@ changetextarea(newtext.join(" "))
           type="button"
           onClick={handleemptyclick}
           className="btn btn-primary mx-2"
+          disabled={text.length===0}
         >
           clear
         </button>
@@ -56,6 +57,9 @@ changetextarea(newtext.join(" "))
           type="button"
           onClick={handleUpperClick}
           className="btn btn-danger mx-2"
+          disabled={text.length===0}
+
+          
         >
           cnvert to Upper Case
         </button>
@@ -64,6 +68,8 @@ changetextarea(newtext.join(" "))
           type="button"
           onClick={handlelowerClick}
           className="btn btn-dark mx-2" 
+          disabled={text.length===0}
+
         >
           cnvert to Lower Case
         </button>
@@ -71,6 +77,8 @@ changetextarea(newtext.join(" "))
           type="button"
           onClick={handleClicCoPYk}
           className="btn btn-info mx-2"
+          disabled={text.length===0}
+
         >
           Click to copy
         </button>
@@ -78,9 +86,14 @@ changetextarea(newtext.join(" "))
           type="button"
           onClick={handleExtraSpace}
           className="btn btn-success"
+          disabled={text.length===0}
+
         >
           Remove extra spacing
         </button>
+        
+      
+      
       </div>
       <div className="containaer">
      <h3>Total </h3>
@@ -102,3 +115,4 @@ Textform.defaultProps = {
 Textform.Prototype = {
   header: PropTypes.string.isRequired,
 };
+
