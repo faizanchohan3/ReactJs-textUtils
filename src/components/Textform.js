@@ -97,7 +97,7 @@ changetextarea(newtext.join(" "))
   );
 }
 Textform.defaultProps = {
-  header: "Please Input your Text",
+  header: "Please Input your Text to Analyze below",
 };
 Textform.Prototype = {
   header: PropTypes.string.isRequired,
